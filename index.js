@@ -22,8 +22,12 @@ app.post("/addtask", function(req, res) {
 });
 
 //Daddy's example of getting something; translate into button?
-app.get("/foo", function(req, res) {
+app.get("/stuff", function(req, res) {
     res.render("stuff", {});
+});
+
+app.get("/posts", function(req, res) {
+    res.render("posts", {});
 });
 
 //Goal: make a button that goes to the /stuff page Daddy made
