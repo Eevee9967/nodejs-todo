@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 //placeholders for added task
-var task = ["buy socks", "practise with nodejs"];
+var task = ["buy my socks", "practise with nodejs"];
 //placeholders for removed task
 var complete = ["finish jquery"];
 
@@ -20,6 +20,13 @@ app.post("/addtask", function(req, res) {
     task.push(newTask);
     res.redirect("/");
 });
+
+//Daddy's example of getting something; translate into button?
+app.get("/foo", function(req, res) {
+    res.render("stuff", {});
+});
+
+//Goal: make a button that goes to the /stuff page Daddy made
 
 app.post("/removetask", function(req, res) {
     var completeTask = req.body.check;
@@ -46,3 +53,9 @@ app.get("/", function(req, res) {
 app.listen(3000, function() {
     console.log("server is running on port 3000");
 });
+
+
+
+//Code Notes to Understand What the Hell is going on:
+// - A lot of req.body?
+// Theory: Requests something from the body element?
